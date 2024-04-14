@@ -1,0 +1,24 @@
+
+Impresión del problema:
+Me pareció un problema sencillo, ya que nos dan la libertad de poder desarrollarlo con nuestros conocimientos previos, además de elegir el lenguaje y entorno de desarrollo que más creamos conveniente.
+
+Ideas iniciales:
+Desarrollé el problema usando el paradigma de POO. La primera idea que tuve fue tener dos clases, una para prenda y otra para lavado.
+Clase Prenda: tendrá un número de prenda y una lista con las prendas que son incompatibles.
+Clase Lavado: Tendrá un número de lavado con una lista de prendas.
+Después opté por crear otra clase llamada DistribuidorPrendas que se encarga de distribuir las prendas en los lavados. Además de leer y escribir los archivos pedidos.
+La idea es que esta última clase tenga un método donde se desarrolle la lógica de distribución de prendas en los lavados, de manera que no haya prendas incompatibles en un mismo lavado.
+
+Comentarios sobre el desarrollo:
+Al desarrollar las tres clases comentadas anteriormente, observé que pasé por alto otro dato que nos proporciona el archivo de entrada, que es el tiempo de lavado de una prenda.
+Entonces se me ocurrió agregar ese dato como atributo en la clase Prenda, y también que la clase Lavado tenga otro atributo que sea el tiempo total de lavado, y que ese tiempo sea el tiempo de lavado más alto de la prenda que tenga ese lavado (esto está escrito en el enunciado).
+Con esto, el método que se encarga de la lógica de distribución de prendas distribuye las prendas de acuerdo con estas restricciones:
+
+1)No puede haber prendas incompatibles en un mismo lavado.
+2)Si una prenda tiene la opción de ir a más de un lavado, irá al lavado que tenga un tiempo más cercano al tiempo de lavado de la prenda a agregar.
+Ejemplo: Si tenemos un lavado1 de tiempo 10, y un lavado2 de tiempo 5, si queremos agregar una prenda de tiempo de lavado 9. Esta prenda irá al lavado1, ya que tiene el tiempo más cercano al tiempo de lavado.
+Con el mismo ejemplo anterior, si queremos agregar otra prenda con un tiempo de lavado de 6, esta prenda irá al lavado2.
+Si queremos agregar una prenda con un tiempo de lavado de 20 y que tiene la opción de elegir ambos lavados 1 y 2, esta prenda irá al lavado1, en este caso, el tiempo total de lavado del lavado1 pasa a ser 20.
+
+Comentarios Finales:
+Con esta primera solución, en el primer problema que tiene 20 prendas y 210 incompatibilidades, se distribuyen las 20 prendas en 9 lavados.
