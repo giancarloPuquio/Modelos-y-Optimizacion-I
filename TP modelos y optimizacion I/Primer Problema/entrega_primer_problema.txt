@@ -20,5 +20,9 @@ Ejemplo: Si tenemos un lavado1 de tiempo 10, y un lavado2 de tiempo 5, si querem
 Con el mismo ejemplo anterior, si queremos agregar otra prenda con un tiempo de lavado de 6, esta prenda irá al lavado2.
 Si queremos agregar una prenda con un tiempo de lavado de 20 y que tiene la opción de elegir ambos lavados 1 y 2, esta prenda irá al lavado1, en este caso, el tiempo total de lavado del lavado1 pasa a ser 20.
 
+Segunda solucion: Para obtener un mejor resultado que el anterior, probe con quitar algunas restricciones. La unica restriccion que queda es que prendas incompatibilidades no pueden ir aun mismo lavado.
+
+
+
 Comentarios Finales:
-Con esta primera solución, en el primer problema que tiene 20 prendas y 210 incompatibilidades, se distribuyen las 20 prendas en 9 lavados.
+Con esta segunda solución, en el primer problema que tiene 20 prendas y 210 incompatibilidades, se distribuyen las 20 prendas en 8 lavados.
