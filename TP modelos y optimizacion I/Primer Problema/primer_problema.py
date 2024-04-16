@@ -66,31 +66,19 @@ class distribuidorPrendas:
         self.listaPrendas[valor2-1].addPrendaIncompatible(valor1)
     
     def asignarPrendasALavados(self):
+        lavados = []
         for prenda in self.listaPrendas:
-            lavadosCompatibles = []
-
-            # Buscamos lavados compatibles
-            for lavado in self.listaLavados:
-                if all(prenda.getNumeroPrenda() not in p.getPrendasIncompatibles() for p in lavado.prendas):
-                    lavadosCompatibles.append(lavado)
-
-            # Si hay lavados compatibles
-            if lavadosCompatibles:
-                # Buscamos el lavado con el tiempo total de lavado más cercano al de la prenda
-                lavadoSeleccionado = min(
-                    lavadosCompatibles,
-                    key=lambda lavado: abs(lavado.tiempoLavadoTotal - prenda.tiempoLavado)
-                )
-
-                # Asignamos la prenda al lavado seleccionado
-                lavadoSeleccionado.agregarPrendaAlLavado(prenda)
-            else:
-                # Si no hay lavados compatibles, creamos uno nuevo y asignamos la prenda a él
-                nuevoLavado = Lavado(len(self.listaLavados) + 1)
-                nuevoLavado.agregarPrendaAlLavado(prenda)
-                self.listaLavados.append(nuevoLavado)
-
-        return self.listaLavados
+            lavado_existente = None
+            for lavado in lavados:
+                if lavado.sePuedeAgregarPrenda(prenda):
+                    lavado_existente = lavado
+                    break
+            if lavado_existente is None:
+                nuevo_lavado = Lavado(len(lavados) + 1)
+                lavados.append(nuevo_lavado)
+                lavado_existente = nuevo_lavado
+            lavado_existente.agregarPrendaAlLavado(prenda)
+        self.listaLavados = lavados
 
 
     def escribirEnArchivo(self, nombreArchivo):
