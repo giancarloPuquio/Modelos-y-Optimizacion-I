@@ -1,0 +1,18 @@
+Ideas iniciales:
+En este caso me piden que mejore el desarrollo de la primera entrega. Con los temas visto en la clase
+teorica sobre Problemas Combinatorios, fui observado cada tipo de problema y viendo cual seria el ideal
+para implementarlo con el trabajo practico sobre las prendas y lavados. Vi que me ayudaria mucho el problema
+de coloreo de grafos.
+
+Comentario sobre el desarrollo:
+Lo primero que hice fue relacionar el problema de coloreo de grafos con el trabajo practico de prendas y lavados.
+Pense en usar cada prenda como vertices del grafo, y que cada vertice (prenda) este relacionada mediante una arista con otra prenda incompatible a ella.
+Asi tendria un grafo, teniendo como vertices a las prendas y que cada una de las prendas conecten a sus prendas incompatibles, asi
+utilizo el algoritmo de coloreo de grafos para obtener el minimo numero de colores necesarios para colorear el grafo,
+que seria para nuestro trabajo practico la cantidad de lavados.
+Lo primero que se realizo fue de ordenar la lista de prendas en funcion de la cantidad de prendas incompatibles que tenian, la prenda con mas incompatiblidades estara primera en la lista.
+Lo segundo fue asignar a cada prenda un lavado, recorriendo las lista de prenda.
+ 
+Comentarios Finales:
+Con esta solucion probe el archivo del segundo problema que tiene 385 prendas y 19095 incompatibilidades, y obtuve que las prendas
+se distribuyen en 32 lavados.
