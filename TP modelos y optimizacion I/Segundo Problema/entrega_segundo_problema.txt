@@ -11,8 +11,14 @@ Asi tendria un grafo, teniendo como vertices a las prendas y que cada una de las
 utilizo el algoritmo de coloreo de grafos para obtener el minimo numero de colores necesarios para colorear el grafo,
 que seria para nuestro trabajo practico la cantidad de lavados.
 Lo primero que se realizo fue de ordenar la lista de prendas en funcion de la cantidad de prendas incompatibles que tenian, la prenda con mas incompatiblidades estara primera en la lista.
-Lo segundo fue asignar a cada prenda un lavado, recorriendo las lista de prenda.
+Lo segundo fue asignar a cada prenda un lavado, recorriendo las lista de prenda. Con esta estrategia el numero de lavados conseguido fue de 32 lavados.
+
+Otra estrategia para minimizar aun mas la cantidad de lavaods fue de utilizar el algoritmo de coloreo greedy de grafos, para esto utilice la biblioteca networkx. Primero creamos un grafo no dirigido, luego agregamos los vertices(prendas) y agregamos
+las aristas(incompatibilidades) al grafo. Despues, aplicamos el algoritmo de coloreo greedy, que consiste en asignar colores a los vértices de manera que ningún par de vértices adyacentes 
+(conectados por una arista) comparta el mismo color. Por ultimo asignamos a cada prenda un lavado. Con esta extrategia conseguimos tambien obtener 32 lavados.
+
+Se me ocurrio que podria utilizar el tiempo de cada prenda, para conseguir minimizar aun mas la cantidad de lavados. Ordene las prendas por tiempo de lavado de menor a mayor, pero esto dio como resultado 51 lavados.
  
 Comentarios Finales:
-Con esta solucion probe el archivo del segundo problema que tiene 385 prendas y 19095 incompatibilidades, y obtuve que las prendas
+Utilizando el algoritmo de coloreo de grafos, probe el archivo del segundo problema que tiene 385 prendas y 19095 incompatibilidades, y obtuve que las prendas
 se distribuyen en 32 lavados.
