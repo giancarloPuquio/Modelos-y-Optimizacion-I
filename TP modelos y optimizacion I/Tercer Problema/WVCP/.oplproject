@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+    	
+    <version>1.0</version>
+    	
+    <configs>
+        		
+        <config default="true" name="Ejecucion" category="opl">
+            			
+            <ref name="WVCP.mod" type="model">
+			</ref>
+            			
+            <ref name="WVCP.dat" type="data">
+			</ref>
+            		
+        </config>
+        		
+        <config default="false" name="Ejecucion2" category="opl">
+            			
+            <ref name="ModeloMinimizarCantColoresUsados.mod" type="model">
+			</ref>
+            		
+        </config>
+        	
+    </configs>
+    	
+
+</project>
