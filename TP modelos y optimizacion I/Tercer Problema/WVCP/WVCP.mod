@@ -1,11 +1,5 @@
-/*********************************************
- * OPL 12.10.0.0 Model
- * Author: Pablo
- * Creation Date: 3 jun. 2022 at 12:31:42
-*********************************************/
-
 int n = ...;
-int limiteColores = n;
+int limiteColores = 11;
 int e = ...;
 range nodos = 1 .. n;
 range colores = 1 .. limiteColores;
@@ -47,11 +41,11 @@ subject to {
     incompatibles:
         forall ( k in colores )
           x[edges[e].i,k]+x[edges[e].j,k]<=1;
-        /*  
+          
   forall ( i in 2 .. limiteColores )
     simetria:
       pesoColor[i-1]>= pesoColor[i];
-      */
+      
 }
 
 main {
@@ -67,6 +61,17 @@ main {
   if (cplex1.solve()) {
     writeln("solution: ", cplex1.getObjValue(), " /size: ", dat.n, " /time: ",
         cplex1.getCplexTime());
+        
+    var usedColors = 0;
+    for (var k in opl.colores) {
+      for (var i in opl.nodos) {
+        if (opl.x[i][k] == 1) {
+          usedColors += 1;
+          break;
+        }
+      }
+    }
+    writeln("Cantidad de colores usados: ", usedColors);    
     
 	for ( i in opl.nodos )
 	  for ( k in opl.colores ){

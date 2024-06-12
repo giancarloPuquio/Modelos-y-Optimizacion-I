@@ -13,13 +13,6 @@
 			</ref>
             		
         </config>
-        		
-        <config default="false" name="Ejecucion2" category="opl">
-            			
-            <ref name="ModeloMinimizarCantColoresUsados.mod" type="model">
-			</ref>
-            		
-        </config>
         	
     </configs>
     	
